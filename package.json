@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm start",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "cd backend && node server.js",
     "server": "cd backend && node server.js",
     "client": "cd frontend && npm run dev",
     "install-backend": "cd backend && npm install",
     "install-frontend": "cd frontend && npm install --include=dev",
     "postinstall": "npm run install-backend && npm run install-frontend",
-    "build": "cd frontend && npm run build",
-    "production-start": "cd backend && node server.js"
+    "build": "cd frontend && npm run build"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
