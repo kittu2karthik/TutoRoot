@@ -1,6 +1,8 @@
-# TutoRoot PDF Q&A Extractor [https://tutoroot-3.onrender.com]
+# TutoRoot PDF Q&A Extractor
 
 TutoRoot Extractor is a full-stack web application designed to automatically parse question and answer documents (PDFs) and extract them into correlated, interactive Q&A pairs.
+
+Explanation Video:https://drive.google.com/file/d/1ClLYYaGQn-XJxLWoRxWFF01zwLPrk6t4/view?usp=drive_link
 
 This tool bypasses expensive LLM API calls and avoids rate limits by utilizing robust, native Regular Expression processing via the `pdf2json` engine.
 
