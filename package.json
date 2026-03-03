@@ -8,7 +8,7 @@
     "server": "cd backend && node server.js",
     "client": "cd frontend && npm run dev",
     "install-backend": "cd backend && npm install",
-    "install-frontend": "cd frontend && npm install",
+    "install-frontend": "cd frontend && npm install --include=dev",
     "postinstall": "npm run install-backend && npm run install-frontend",
     "build": "cd frontend && npm run build",
     "production-start": "cd backend && node server.js"
