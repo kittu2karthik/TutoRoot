@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .dark {
+    /* Extreme dark palette for depth */
+    --background: 230 25% 6%;
+    --foreground: 210 40% 98%;
+
+    /* Cards are now semi-transparent for glassmorphism */
+    --card: 230 25% 10% / 0.4;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 25% 10% / 0.8;
+    --popover-foreground: 210 40% 98%;
+
+    /* Vibrant violet primary */
+    --primary: 250 100% 70%;
+    --primary-foreground: 230 25% 6%;
+
+    --secondary: 230 25% 15% / 0.6;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 25% 15% / 0.6;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 250 100% 70% / 0.2;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Very subtle borders */
+    --border: 230 25% 25% / 0.3;
+    --input: 230 25% 25% / 0.3;
+    --ring: 250 100% 70%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased min-h-screen relative overflow-x-hidden;
+  }
+
+  /* Animated Glowing Orbs Background */
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.35;
+    animation: float 25s infinite ease-in-out alternate;
+    pointer-events: none;
+  }
+
+  body::before {
+    background: radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.4) 0%,
+      rgba(0, 0, 0, 0) 70%
+    ); /* Violet */
+    top: -10%;
+    left: -10%;
+    animation-delay: -5s;
+  }
+
+  body::after {
+    background: radial-gradient(
+      circle,
+      rgba(56, 189, 248, 0.3) 0%,
+      rgba(0, 0, 0, 0) 70%
+    ); /* Sky Blue */
+    bottom: -10%;
+    right: -10%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(10%, 10%) scale(1.1);
+  }
+  66% {
+    transform: translate(-10%, 5%) scale(0.9);
+  }
+  100% {
+    transform: translate(5%, -10%) scale(1);
+  }
+}
+
+/* Global Glassmorphism on Cards & Tables */
+.bg-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle, pill-shaped scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Hover state on scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
