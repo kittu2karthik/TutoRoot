@@ -1,4 +1,4 @@
-# TutoRoot PDF Q&A Extractor
+# TutoRoot PDF Q&A Extractor [https://tutoroot-3.onrender.com]
 
 TutoRoot Extractor is a full-stack web application designed to automatically parse question and answer documents (PDFs) and extract them into correlated, interactive Q&A pairs.
 
@@ -47,10 +47,12 @@ This tool bypasses expensive LLM API calls and avoids rate limits by utilizing r
    PORT=5000
    DATABASE_URL=postgresql://your_db_user:password@hostname.neon.tech/neondb?sslmode=require
    JWT_SECRET=your_super_secret_jwt_key
+   NODE_ENV=
    ```
 
 4. **Start the Development Server**
    Start both the React frontend and the Express backend concurrently:
+
    ```bash
    npm run dev
    ```
